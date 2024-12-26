@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "GoMoku",
+			"path": "."
+		},
+		{
+			"name": "templates",
+			"path": "E:/Downloads/GoMoku-main/GoMoku-main/templates"
+		},
+		{
+			"name": "static",
+			"path": "E:/Downloads/GoMoku-main/GoMoku-main/static"
+		}
+	],
+	"settings": {}
+}

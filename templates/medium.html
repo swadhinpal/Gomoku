@@ -1,0 +1,89 @@
+{% extends 'layout.html' %}
+{% block title %}medium level{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/medium.css') }}">
+{% endblock %}
+
+
+{% block content %}
+<section id="board" class="black">
+    <div class="row">
+        <div class="col-lg" id="p1">
+            <table class="desk"></table>
+        </div>
+        <div class="col-lg" id="p2">
+            <div class="float-left">
+                <table class="table info">
+                    <tr>
+                        <td class="text-center"><img src="../static/images/gomoku-logo-removebg-preview.png" height="200px" width="500px" style="background: transparent;"></td>
+                        <!-- <tr><img src="../static/images/mini.jpg"></tr> -->
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td style="text-align: center;"><img src="../static/images/char3_1-removebg-preview.png" height="100"></td>
+                    </tr>
+                    <tr></tr>
+                    <tr><td class="text-center">
+                        <button type="button" class="btn btn-warning">Level Medium</button>
+                    </td></tr>
+                    <th>Choose Your Color</th>
+                    <tr>
+                        <td >
+                            <input type="radio" name="choice" checked> White ( if chosen, computer will play first ) &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            <input type="radio" name="choice" checked> Black ( if chosen, you will play first )
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            <button data-action="init" class="btn btn-outline-dark">Clear</button>
+                        </td>
+                    </tr>
+                    
+                </table>
+                <p></p>
+                <div class="alert alert-danger d-none"></div>
+            </div>
+        </div>
+    </div>
+    <!-- <audio id="page-audio" src="{{ url_for('static', filename='audio/effect.mp3') }}" preload="auto"></audio> -->
+
+</section>
+<audio id="page-audio" autoplay muted>
+    <source src="{{ url_for('static', filename='audio/effect.mp3') }}" type="audio/mpeg">
+
+</audio>
+{% endblock %}
+
+
+
+{% block js %}
+<script type="text/javascript">
+    var $SCRIPT_ROOT = {{request.script_root | tojson | safe }};
+    function accessData(action, data, callback) {
+        $.ajax({
+            type: "GET",
+            url: $SCRIPT_ROOT + "medium/" + action,
+            data: data,
+            dataType: "JSON",
+            success: callback,
+            error: function (jqXHR) {
+                alert("Error: " + jqXHR.status);
+            }
+        });
+        // Play audio on page load
+    }
+    window.addEventListener('load', function() {
+    var audio = document.getElementById('page-audio');
+    
+    audio.muted=false;
+    audio.play();
+});
+</script>
+<script src="{{ url_for('static', filename='js/medium.js') }}"></script>
+
+{% endblock %}

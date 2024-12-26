@@ -1,0 +1,96 @@
+{% extends 'layout.html' %}
+{% block title %}easy level{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/easy.css') }}">
+{% endblock %}
+
+
+{% block content %}
+<section id="board" class="black">
+    <div class="row">
+        <div class="col-lg" id="p1">
+            <table class="desk"></table>
+        </div>
+        <div class="col-lg" id="p2" class="float-left">
+            <div class="float-left">
+                <table class="table info">
+                    <tr>
+                        <td class="text-center"><img src="../static/images/gomoku-logo-removebg-preview.png" height="200px" width="500px" style="background: transparent;"></td>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td style="text-align: center;"><img src="../static/images/char3_1-removebg-preview.png" height="100"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-center">
+                            <button type="button" class="btn btn-warning">Level Easy
+                            
+                            </button>
+                        </td>
+                    </tr>
+                    <th>Choose Your  Stone's Color</th>
+                    <tr>
+                        <td >
+                            <input type="radio" name="choice" checked> White ( if chosen, computer will play first )&nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            <input type="radio" name="choice" checked> Black ( if chosen, you will play first )
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            <button data-action="init" class="btn btn-outline-dark">Clear</button>
+                        </td>
+                    </tr>
+                    
+                    <!-- <tr>
+                        <td id="d1"><img src="../static/images/char3_1.gif"  width="160"></td>
+                        <td id="d2"><img src="../static/images/vs-removebg-preview.png" height="100" width="100"></td>
+                        <td id="d3"><img src="../static/images/computer-removebg-preview (1).png" height="160" width="160"></td>
+                    </tr> -->
+                </table>
+                <p></p>
+                <div class="alert alert-danger d-none"></div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<audio id="page-audio" autoplay muted>
+    <source src="{{ url_for('static', filename='audio/effect.mp3') }}" type="audio/mpeg">
+</audio>
+
+{% endblock %}
+
+
+
+{% block js %}
+<script type="text/javascript">
+    var $SCRIPT_ROOT = {{request.script_root | tojson | safe }};
+    console.log($SCRIPT_ROOT)
+    function accessData(action, data, callback) {
+        $.ajax({
+            type: "GET",
+            url: $SCRIPT_ROOT + 'easy/'+ action,
+            data: data,
+            dataType: "JSON",
+            success: callback,
+            error: function (jqXHR) {
+                alert("Error: " + jqXHR.status);
+            }
+        });
+    }
+
+    window.addEventListener('load', function() {
+    var audio = document.getElementById('page-audio');
+    audio.muted=false;
+    audio.play();
+    })
+</script>
+<script src="{{ url_for('static', filename='js/easy.js') }}"></script>
+
+{% endblock %}

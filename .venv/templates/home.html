@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>GOMOKU</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/styles/home.css">
+</head>
+
+<body>
+
+    <head>
+        <!-- <h1>GOMOKU</h1> -->
+        <!-- <div style="background-color: rgb(190, 138, 54); box-shadow: azure; width: fit-content; margin: 1px auto; border-radius: 3%;"><h1 class="display-1" style="text-align: center;" >GOMOKU</h1></div> -->
+        <h1 class="display-1" style="text-shadow: 5px 5px rgb(189, 180, 180); background: linear-gradient(to bottom, black, #F9F8FF); -webkit-background-clip: text; color: black;">GOMOKU</h1>
+
+        <h1 class="display-6">[five in a row]</h1>
+        <!-- spinner  -->
+        <div class="text-center">
+            <div class="spinner-grow text-dark" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <div class="spinner-grow text-dark" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <div class="spinner-grow text-dark" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <div class="spinner-grow text-dark" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <div class="spinner-grow text-dark" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+        <br>
+    </head>
+    <br>
+    <main>
+        <div id="main">
+          <!--  <div id="d1" class="text-center">
+                <button id="play" type="button" class="btn btn-warning">Select a level</button>
+                <br><br>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-primary" style="border-left: 1px white solid;" onclick="selectLevel('easy')">Easy</button>
+                    <button type="button" class="btn btn-primary" style="border-left: 1px white solid;" onclick="selectLevel('medium')">Medium</button>
+                    <button type="button" class="btn btn-primary" style="border-left: 1px white solid;" onclick="selectLevel('hard')">Hard</button>
+                </div>
+            </div>
+            --->
+            <div id="id2" class="relative-container">
+                <aside>
+                    <div class="text-center">
+                        <img id="gomokuImage" src="../static/images/image.png" class="rounded" alt="gomoku-board" height="35%" width="50%">
+                    </div> 
+                    
+                
+                    <div class="floating-buttons">
+                       <div class="button_play">
+                        <button id="play" type="button" class="btn btn-warning">Select a level</button> </br> 
+                       </div> 
+                       <div class="button_levels">
+                        <button type="button" class="btn btn-primary" onclick="selectLevel('easy')">Easy</button>
+                        <button type="button" class="btn btn-primary" onclick="selectLevel('medium')">Medium</button>
+                        <button type="button" class="btn btn-primary" onclick="selectLevel('hard')">Hard</button>
+                       </div>
+                        
+                    </div>                 
+                </aside>
+            </div>
+        </div>
+    </main>
+<!-- 
+    <footer>
+        &copy; All rights preserved. Developed by Shifat Jahan Shifa, Swadhin Pal, Adity Khisha.
+    </footer> -->
+
+    <script src="../static/js/main.js"></script>
+    <!-- script code  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
