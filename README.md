@@ -30,7 +30,7 @@ We have developed this game project under the course CSE-604 (Artificial Intelli
 ### Clone the project
 
 ```bash
-  git clone https://github.com/ShifatJahanShifa/GoMoku.git
+  git clone https://github.com/swadhinpal/Gomoku
 ```
 
 ### Activate virtual environment
